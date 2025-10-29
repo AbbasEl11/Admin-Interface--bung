@@ -20,6 +20,10 @@ class Event(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     date = models.DateTimeField()
     capacity = models.PositiveIntegerField()
+    
+    class Meta:
+        verbose_name = "Liveact"
+        ordering = ["date"]
 
     def __str__(self):
         return f"{self.title} ({self.date.date()})"
